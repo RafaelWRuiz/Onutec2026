@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#10131d" />
+    <meta name="description" content="Inscrições para a simulação ONU Tec." />
+    <title>ONU Tec | Inscrições 2026</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#app">Ir para a inscrição</a>
+    <main id="app" class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="ONU Tec, início">
+          <img src="public/onu-tec.png" alt="Símbolo ONU Tec" />
+          <span>ONU TEC<small>INSCRIÇÕES 2026</small></span>
+        </a>
+        <button class="info-button" type="button" aria-label="Como funciona a inscrição" data-action="help">?</button>
+      </header>
+
+      <section class="status-line" aria-label="Andamento da inscrição">
+        <span id="step-label">Passo 1 de 4</span>
+        <div class="progress" aria-hidden="true"><i id="progress-bar"></i></div>
+      </section>
+
+      <section class="stage" id="stage" aria-live="polite"></section>
+    </main>
+
+    <aside class="corner-mark" aria-label="Etec Dr. Domingos Minicucci Filho">
+      <img src="public/escola-logo.png" alt="Logo da Etec Dr. Domingos Minicucci Filho" />
+    </aside>
+
+    <dialog id="help-dialog" class="dialog">
+      <button class="dialog-close" type="button" aria-label="Fechar" data-action="close-help">×</button>
+      <p class="eyebrow">COMO FUNCIONA</p>
+      <h2>Uma vaga por dupla.</h2>
+      <p>Depois de escolher o país, a vaga fica reservada para sua dupla por 5 minutos. Conclua a confirmação antes do prazo.</p>
+      <button class="button primary" type="button" data-action="close-help">Entendi</button>
+    </dialog>
+
+    <script src="app.js"></script>
+  </body>
+</html>
