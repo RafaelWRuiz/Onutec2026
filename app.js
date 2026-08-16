@@ -16,81 +16,35 @@ const committees = {
   CCP: ["Brasil", "China", "Colômbia", "El Salvador", "Emirados Árabes Unidos", "Equador", "EUA", "Filipinas", "Itália", "México", "Nigéria", "Países Baixos", "Tailândia"],
   PNUMA: ["África do Sul", "Alemanha", "Brasil", "Canadá", "China", "EUA", "Indonésia", "Índia", "Japão", "Maldivas", "Nigéria", "Noruega"]
 };
-
 const sampleClasses = ["1º ADM", "2º ADM", "3º ADM", "1º D.S."];
-const flags = { "Afeganistão": "🇦🇫", "África do Sul": "🇿🇦", "Alemanha": "🇩🇪", "Arábia Saudita": "🇸🇦", "Argentina": "🇦🇷", "Austrália": "🇦🇺", "Bangladesh": "🇧🇩", "Brasil": "🇧🇷", "Canadá": "🇨🇦", "Chile": "🇨🇱", "China": "🇨🇳", "Colômbia": "🇨🇴", "Coreia do Norte": "🇰🇵", "Coreia do Sul": "🇰🇷", "Costa Rica": "🇨🇷", "Cuba": "🇨🇺", "Dinamarca": "🇩🇰", "EUA": "🇺🇸", "Egito": "🇪🇬", "El Salvador": "🇸🇻", "Emirados Árabes Unidos": "🇦🇪", "Equador": "🇪🇨", "Espanha": "🇪🇸", "Etiópia": "🇪🇹", "Filipinas": "🇵🇭", "Finlândia": "🇫🇮", "França": "🇫🇷", "Haiti": "🇭🇹", "Iémen": "🇾🇪", "Indonésia": "🇮🇩", "Índia": "🇮🇳", "Irã": "🇮🇷", "Iraque": "🇮🇶", "Irlanda": "🇮🇪", "Israel": "🇮🇱", "Itália": "🇮🇹", "Japão": "🇯🇵", "Líbano": "🇱🇧", "Luxemburgo": "🇱🇺", "Maldivas": "🇲🇻", "México": "🇲🇽", "Nigéria": "🇳🇬", "Noruega": "🇳🇴", "Países Baixos": "🇳🇱", "Paquistão": "🇵🇰", "Peru": "🇵🇪", "Polônia": "🇵🇱", "Quênia": "🇰🇪", "Reino Unido": "🇬🇧", "República Democrática do Congo": "🇨🇩", "Rússia": "🇷🇺", "Sudão": "🇸🇩", "Suécia": "🇸🇪", "Suíça": "🇨🇭", "Taiwan": "🇹🇼", "Tailândia": "🇹🇭", "Tuvalu": "🇹🇻", "Turquia": "🇹🇷", "Ucrânia": "🇺🇦", "Uganda": "🇺🇬", "Venezuela": "🇻🇪", "Vietnã": "🇻🇳" };
-const flagCodes = { "Afeganistão": "af", "África do Sul": "za", "Alemanha": "de", "Arábia Saudita": "sa", "Argentina": "ar", "Austrália": "au", "Bangladesh": "bd", "Brasil": "br", "Canadá": "ca", "Chile": "cl", "China": "cn", "Colômbia": "co", "Coreia do Norte": "kp", "Coreia do Sul": "kr", "Costa Rica": "cr", "Cuba": "cu", "Dinamarca": "dk", "EUA": "us", "Egito": "eg", "El Salvador": "sv", "Emirados Árabes Unidos": "ae", "Equador": "ec", "Espanha": "es", "Etiópia": "et", "Filipinas": "ph", "Finlândia": "fi", "França": "fr", "Haiti": "ht", "Iémen": "ye", "Indonésia": "id", "Índia": "in", "Irã": "ir", "Iraque": "iq", "Irlanda": "ie", "Israel": "il", "Itália": "it", "Japão": "jp", "Líbano": "lb", "Luxemburgo": "lu", "Maldivas": "mv", "México": "mx", "Nigéria": "ng", "Noruega": "no", "Países Baixos": "nl", "Paquistão": "pk", "Peru": "pe", "Polônia": "pl", "Quênia": "ke", "Reino Unido": "gb", "República Democrática do Congo": "cd", "Rússia": "ru", "Sudão": "sd", "Suécia": "se", "Suíça": "ch", "Taiwan": "tw", "Tailândia": "th", "Tuvalu": "tv", "Turquia": "tr", "Ucrânia": "ua", "Uganda": "ug", "Venezuela": "ve", "Vietnã": "vn" };
-const state = { step: 1, period: "", committee: "", country: "", personOne: "", classOne: "", personTwo: "", classTwo: "", reservationUntil: 0 };
+const flagCodes = { "Afeganistão":"af","África do Sul":"za","Alemanha":"de","Arábia Saudita":"sa","Argentina":"ar","Austrália":"au","Bangladesh":"bd","Brasil":"br","Canadá":"ca","Chile":"cl","China":"cn","Colômbia":"co","Coreia do Norte":"kp","Coreia do Sul":"kr","Costa Rica":"cr","Cuba":"cu","Dinamarca":"dk","EUA":"us","Egito":"eg","El Salvador":"sv","Emirados Árabes Unidos":"ae","Equador":"ec","Espanha":"es","Etiópia":"et","Filipinas":"ph","Finlândia":"fi","França":"fr","Haiti":"ht","Iémen":"ye","Indonésia":"id","Índia":"in","Irã":"ir","Iraque":"iq","Irlanda":"ie","Israel":"il","Itália":"it","Japão":"jp","Líbano":"lb","Luxemburgo":"lu","Maldivas":"mv","México":"mx","Nigéria":"ng","Noruega":"no","Países Baixos":"nl","Paquistão":"pk","Peru":"pe","Polônia":"pl","Quênia":"ke","Reino Unido":"gb","República Democrática do Congo":"cd","Rússia":"ru","Sudão":"sd","Suécia":"se","Suíça":"ch","Taiwan":"tw","Tailândia":"th","Tuvalu":"tv","Turquia":"tr","Ucrânia":"ua","Uganda":"ug","Venezuela":"ve","Vietnã":"vn" };
+const supabase = window.supabase.createClient(window.ONUTEC_SUPABASE_URL, window.ONUTEC_SUPABASE_PUBLISHABLE_KEY);
+const storageKey = "onutec-visitor-token";
+const visitorToken = localStorage.getItem(storageKey) || crypto.randomUUID();
+localStorage.setItem(storageKey, visitorToken);
+const state = { step: 1, period: "", committee: "", country: "", slotId: "", personOne: "", classOne: "", personTwo: "", classTwo: "", loading: false, slots: [] };
 const stage = document.querySelector("#stage");
 const progress = document.querySelector("#progress-bar");
 const stepLabel = document.querySelector("#step-label");
 const dialog = document.querySelector("#help-dialog");
-const unavailable = new Set(["CSNU|Brasil", "CSNU|França", "UNICEF|China"]);
+const escapeHtml = value => String(value || "").replace(/[&<>\"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[char]);
+const flag = country => `<img class="flag" src="https://flagcdn.com/w80/${flagCodes[country] || "un"}.png" srcset="https://flagcdn.com/w160/${flagCodes[country] || "un"}.png 2x" alt="" />`;
 
-const escapeHtml = value => value.replace(/[&<>'\"]/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[char]);
-const currentReservation = () => state.reservationUntil > Date.now();
-const formatTime = ms => { const total = Math.max(0, Math.ceil(ms / 1000)); return `${String(Math.floor(total / 60)).padStart(2, "0")}:${String(total % 60).padStart(2, "0")}`; };
-
-function render() {
-  stepLabel.textContent = state.step === 6 ? "Inscrição concluída" : `Passo ${state.step} de 5`;
-  progress.style.width = `${Math.min(state.step, 5) * 20}%`;
-  const views = { 1: periodView, 2: detailsView, 3: committeeView, 4: countryView, 5: confirmationView, 6: successView };
-  stage.innerHTML = views[state.step]();
-  if (state.step === 5 && currentReservation()) startTimer();
-}
-
-function periodView() { return `
-  <div class="choice-stack">
-    <button class="choice" data-period="Manhã" type="button"><span class="choice-title">Manhã</span><span class="choice-arrow">→</span></button>
-    <button class="choice" data-period="Tarde" type="button"><span class="choice-title">Tarde</span><span class="choice-arrow">→</span></button>
-  </div>
-  `; }
-
-function detailsView() {
-  return `${periodBadge()}<p class="eyebrow">DADOS DA DUPLA</p>
-  <form id="details-form" novalidate><div class="form-grid">
-    ${field("personOne", "Nome do 1º integrante", "Nome completo", state.personOne)}
-    ${classField("classOne", "Turma do 1º integrante", state.classOne)}
-    ${field("personTwo", "Nome do 2º integrante", "Nome completo", state.personTwo)}
-    ${classField("classTwo", "Turma do 2º integrante", state.classTwo)}
-  </div><p id="form-error" class="error" role="alert"></p><div class="actions"><button class="button secondary" type="button" data-action="back">Voltar</button><button class="button primary" type="submit">Escolher comitê</button></div></form>`;
-}
+function render() { stepLabel.textContent = state.step === 6 ? "Inscrição concluída" : `Passo ${state.step} de 5`; progress.style.width = `${Math.min(state.step, 5) * 20}%`; const views = { 1: periodView, 2: detailsView, 3: committeeView, 4: countryView, 5: confirmationView, 6: successView }; stage.innerHTML = views[state.step](); }
+function periodView() { return `<div class="choice-stack"><button class="choice" data-period="Manhã" type="button"><span class="choice-title">Manhã</span><span class="choice-arrow">→</span></button><button class="choice" data-period="Tarde" type="button"><span class="choice-title">Tarde</span><span class="choice-arrow">→</span></button></div>`; }
+function detailsView() { return `${periodBadge()}<p class="eyebrow">DADOS DA DUPLA</p><form id="details-form" novalidate><div class="form-grid">${field("personOne", "Nome do 1º integrante", "Nome completo", state.personOne)}${classField("classOne", "Turma do 1º integrante", state.classOne)}${field("personTwo", "Nome do 2º integrante", "Nome completo", state.personTwo)}${classField("classTwo", "Turma do 2º integrante", state.classTwo)}</div><p id="form-error" class="error" role="alert"></p><div class="actions"><button class="button secondary" type="button" data-action="back">Voltar</button><button class="button primary" type="submit">Escolher comitê</button></div></form>`; }
 function field(name, label, placeholder, value) { return `<div class="field"><label for="${name}">${label}</label><input id="${name}" name="${name}" value="${escapeHtml(value)}" placeholder="${placeholder}" autocomplete="name" required /></div>`; }
 function classField(name, label, value) { return `<div class="field"><label for="${name}">${label}</label><select id="${name}" name="${name}" required><option value="">Selecione sua turma</option>${sampleClasses.map(item => `<option value="${item}" ${value === item ? "selected" : ""}>${item}</option>`).join("")}</select></div>`; }
 function periodBadge() { return `<div class="period-badge" aria-label="Período escolhido">Período escolhido <strong>${state.period}</strong></div>`; }
-
-function committeeView() {
-  const options = Object.keys(committees).map((name, index) => `<button class="committee-chip" type="button" aria-pressed="${state.committee === name}" data-committee="${name}">${index + 1}. ${name}</button>`).join("");
-  return `${periodBadge()}<p class="eyebrow">ESCOLHA DO COMITÊ</p><div class="committee-select compact" role="group" aria-label="Escolha um comitê">${options}</div><div class="actions"><button class="button secondary" type="button" data-action="back">Voltar</button><button class="button primary" type="button" data-action="continue-committee" ${state.committee ? "" : "disabled"}>Ver países</button></div>`;
-}
-
-function countryView() {
-  const countries = committees[state.committee].map(country => {
-    const isUnavailable = unavailable.has(`${state.committee}|${country}`);
-    return `<button class="country ${isUnavailable ? "unavailable" : "available"}" type="button" ${isUnavailable ? "disabled" : ""} data-country="${country}"><span><img class="flag" src="https://flagcdn.com/w80/${flagCodes[country] || "un"}.png" srcset="https://flagcdn.com/w160/${flagCodes[country] || "un"}.png 2x" alt="" />${country}</span><small>${isUnavailable ? "Indisponível" : "Reservar"}</small></button>`;
-  }).join("");
-  return `${periodBadge()}<h1 class="committee-title">${state.committee}</h1><div class="country-list compact-list">${countries}</div><div class="actions"><button class="button secondary" type="button" data-action="back">Voltar</button></div>`;
-}
-
-function confirmationView() { return `${periodBadge()}<p class="eyebrow">VAGA RESERVADA <span class="timer" id="timer">05:00</span></p><h1>Revise antes de confirmar.</h1><div class="confirmation"><h2><img class="flag flag-large" src="https://flagcdn.com/w80/${flagCodes[state.country] || "un"}.png" srcset="https://flagcdn.com/w160/${flagCodes[state.country] || "un"}.png 2x" alt="" />${state.country}</h2><p class="lead">${state.committee} · ${state.period}</p><div class="confirmation-grid"><div><small>Integrante 1</small><strong>${escapeHtml(state.personOne)}</strong><span>${escapeHtml(state.classOne)}</span></div><div><small>Integrante 2</small><strong>${escapeHtml(state.personTwo)}</strong><span>${escapeHtml(state.classTwo)}</span></div></div></div><div class="reserve-strip"><strong>Importante:</strong> após confirmar, apenas a organização poderá alterar a inscrição.</div><div class="actions"><button class="button secondary" type="button" data-action="release">Trocar país</button><button class="button primary" type="button" data-action="confirm">Confirmar inscrição</button></div>`; }
-
+function committeeView() { const options = Object.keys(committees).map((name, index) => `<button class="committee-chip" type="button" aria-pressed="${state.committee === name}" data-committee="${name}">${index + 1}. ${name}</button>`).join(""); return `${periodBadge()}<p class="eyebrow">ESCOLHA DO COMITÊ</p><div class="committee-select compact" role="group" aria-label="Escolha um comitê">${options}</div><div class="actions"><button class="button secondary" type="button" data-action="back">Voltar</button><button class="button primary" type="button" data-action="continue-committee" ${state.committee ? "" : "disabled"}>Ver países</button></div>`; }
+function countryView() { if (state.loading) return `${periodBadge()}<h1 class="committee-title">${state.committee}</h1><p class="lead">Atualizando países disponíveis...</p>`; const countries = state.slots.map(slot => `<button class="country ${slot.availability === "available" ? "available" : "unavailable"}" type="button" ${slot.availability === "available" ? "" : "disabled"} data-slot-id="${slot.id}" data-country="${slot.country}"><span>${flag(slot.country)}${slot.country}</span><small>${slot.availability === "available" ? "Reservar" : "Indisponível"}</small></button>`).join(""); return `${periodBadge()}<h1 class="committee-title">${state.committee}</h1><p id="country-error" class="error" role="alert"></p><div class="country-list compact-list">${countries}</div><div class="actions"><button class="button secondary" type="button" data-action="back">Voltar</button></div>`; }
+function confirmationView() { return `${periodBadge()}<p class="eyebrow">CONFIRA SEUS DADOS</p><h1>Revise antes de confirmar.</h1><div class="confirmation"><h2><img class="flag flag-large" src="https://flagcdn.com/w80/${flagCodes[state.country] || "un"}.png" srcset="https://flagcdn.com/w160/${flagCodes[state.country] || "un"}.png 2x" alt="" />${state.country}</h2><p class="lead">${state.committee} · ${state.period}</p><div class="confirmation-grid"><div><small>Integrante 1</small><strong>${escapeHtml(state.personOne)}</strong><span>${escapeHtml(state.classOne)}</span></div><div><small>Integrante 2</small><strong>${escapeHtml(state.personTwo)}</strong><span>${escapeHtml(state.classTwo)}</span></div></div></div><div class="reserve-strip"><strong>Importante:</strong> após confirmar, apenas a organização poderá alterar a inscrição.</div><div class="actions"><button class="button secondary" type="button" data-action="release">Trocar país</button><button class="button primary" type="button" data-action="confirm">Confirmar inscrição</button></div>`; }
 function successView() { return `${periodBadge()}<div class="success-mark">✓</div><p class="eyebrow">INSCRIÇÃO CONFIRMADA</p><h1>Até a próxima sessão.</h1><p class="lead">Sua dupla foi inscrita para representar <strong>${state.country}</strong> no comitê ${state.committee}, período da ${state.period.toLowerCase()}.</p><div class="confirmation"><h2><img class="flag flag-large" src="https://flagcdn.com/w80/${flagCodes[state.country] || "un"}.png" srcset="https://flagcdn.com/w160/${flagCodes[state.country] || "un"}.png 2x" alt="" />${state.country} · ${state.committee}</h2><p class="lead">${escapeHtml(state.personOne)} e ${escapeHtml(state.personTwo)}</p></div><p class="note"><strong>✓</strong><span>Guarde esta confirmação. Caso precise corrigir algo, procure a organização do evento.</span></p>`; }
-
-function startTimer() { const el = document.querySelector("#timer"); const tick = () => { if (!currentReservation()) { state.country = ""; state.step = 3; render(); return; } if (el) { el.textContent = formatTime(state.reservationUntil - Date.now()); window.setTimeout(tick, 1000); } }; tick(); }
-
-document.addEventListener("click", event => {
-  const button = event.target.closest("button"); if (!button) return;
-  if (button.dataset.period) { state.period = button.dataset.period; state.step = 2; render(); }
-  if (button.dataset.committee) { state.committee = button.dataset.committee; render(); }
-  if (button.dataset.country) { state.country = button.dataset.country; state.reservationUntil = Date.now() + 5 * 60 * 1000; state.step = 5; render(); }
-  if (button.dataset.action === "continue-committee" && state.committee) { state.step = 4; render(); }
-  if (button.dataset.action === "back") { state.step = Math.max(1, state.step - 1); render(); }
-  if (button.dataset.action === "release") { state.country = ""; state.reservationUntil = 0; state.step = 4; render(); }
-  if (button.dataset.action === "confirm") { state.step = 6; render(); }
-  if (button.dataset.action === "help") dialog.showModal();
-  if (button.dataset.action === "close-help") dialog.close();
-});
-
+async function loadSlots() { state.loading = true; render(); const { data, error } = await supabase.rpc("list_event_slots", { p_period: state.period, p_committee: state.committee }); state.loading = false; state.slots = data || []; render(); if (error) showCountryError("Não foi possível carregar os países. Tente novamente."); }
+function showCountryError(message) { const error = document.querySelector("#country-error"); if (error) error.textContent = message; }
+async function reserveCountry(slotId, country) { const { data, error } = await supabase.rpc("reserve_event_slot", { p_slot_id: slotId, p_visitor_token: visitorToken }); const result = data && data[0] && data[0].result; if (error || result !== "reserved") { await loadSlots(); showCountryError("Este país acabou de ser escolhido por outra dupla. Selecione outro."); return; } state.slotId = slotId; state.country = country; state.step = 5; render(); }
+async function releaseCountry() { if (state.slotId) await supabase.rpc("release_event_slot", { p_slot_id: state.slotId, p_visitor_token: visitorToken }); state.slotId = ""; state.country = ""; state.step = 4; await loadSlots(); }
+async function confirmRegistration() { const button = document.querySelector('[data-action="confirm"]'); if (button) { button.disabled = true; button.textContent = "Confirmando..."; } const { error } = await supabase.rpc("confirm_event_registration", { p_slot_id: state.slotId, p_visitor_token: visitorToken, p_member_one_name: state.personOne, p_member_one_class: state.classOne, p_member_two_name: state.personTwo, p_member_two_class: state.classTwo }); if (error) { if (button) { button.disabled = false; button.textContent = "Confirmar inscrição"; } alert("Não foi possível concluir esta inscrição. O país pode não estar mais disponível. Escolha outro e tente novamente."); await releaseCountry(); return; } state.step = 6; render(); }
+document.addEventListener("click", async event => { const button = event.target.closest("button"); if (!button) return; if (button.dataset.period) { state.period = button.dataset.period; state.step = 2; render(); } else if (button.dataset.committee) { state.committee = button.dataset.committee; render(); } else if (button.dataset.slotId) { button.disabled = true; await reserveCountry(button.dataset.slotId, button.dataset.country); } else if (button.dataset.action === "continue-committee" && state.committee) { state.step = 4; await loadSlots(); } else if (button.dataset.action === "back") { state.step = Math.max(1, state.step - 1); render(); } else if (button.dataset.action === "release") { await releaseCountry(); } else if (button.dataset.action === "confirm") { await confirmRegistration(); } else if (button.dataset.action === "help") { dialog.showModal(); } else if (button.dataset.action === "close-help") { dialog.close(); } });
 document.addEventListener("submit", event => { if (event.target.id !== "details-form") return; event.preventDefault(); const data = new FormData(event.target); ["personOne", "classOne", "personTwo", "classTwo"].forEach(key => state[key] = String(data.get(key) || "").trim()); const error = document.querySelector("#form-error"); if (!state.personOne || !state.classOne || !state.personTwo || !state.classTwo) { error.textContent = "Preencha os dados dos dois integrantes para continuar."; return; } state.step = 3; render(); });
-
 render();
