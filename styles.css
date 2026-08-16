@@ -38,7 +38,7 @@ button:focus-visible, input:focus-visible, a:focus-visible { outline: 3px solid 
 .brand img { width: 2.55rem; height: 2.55rem; object-fit: contain; border-radius: 50%; }
 .brand small { display: block; margin-top: .16rem; color: var(--muted); font-size: .58rem; font-weight: 700; letter-spacing: .13em; }
 .info-button { width: 2.75rem; height: 2.75rem; color: var(--text); background: var(--surface); border: 1px solid var(--line); border-radius: 50%; font-weight: 800; }
-.status-line { margin-top: var(--space-5); display: grid; gap: .55rem; color: var(--muted); font-size: .78rem; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+.status-line { margin-top: var(--space-5); display: grid; gap: .55rem; color: var(--muted); font-size: .78rem; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }.status-line[hidden] { display: none !important; }
 .progress { height: .3rem; overflow: hidden; background: var(--surface-raised); border-radius: 99px; }
 .progress i { display: block; width: 25%; height: 100%; background: var(--blue); border-radius: inherit; transition: width 220ms ease-out; }
 .stage { padding-top: clamp(1.5rem, 5vh, 2.5rem); }
