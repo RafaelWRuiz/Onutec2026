@@ -94,6 +94,8 @@ h2 { margin-bottom: .7rem; font-size: 1.65rem; line-height: 1.08; letter-spacing
 .reserve-strip { margin-top: 1rem; padding: .85rem 1rem; border: 1px solid oklch(57% .12 30); border-radius: .85rem; background: oklch(24% .045 30); color: oklch(90% .04 55); font-size: .9rem; line-height: 1.45; }
 .reserve-strip strong { color: oklch(87% .11 55); }
 .confirmation { padding: 1.3rem; background: var(--surface); border: 1px solid var(--line); border-radius: 1.25rem; }
+.confirmation-classes { margin: .45rem 0 0; color: var(--muted); font-size: .9rem; }
+.confirmation-classes strong { color: var(--blue-strong); }
 .confirmation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.3rem; }
 .confirmation-grid div { display: grid; gap: .22rem; }
 .confirmation-grid small { color: var(--muted); font-size: .72rem; font-weight: 750; text-transform: uppercase; letter-spacing: .07em; }
