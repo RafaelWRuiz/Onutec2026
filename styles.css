@@ -118,6 +118,17 @@ h2 { margin-bottom: .7rem; font-size: 1.65rem; line-height: 1.08; letter-spacing
 .countdown-note p { margin: 0; }.countdown-note strong { color: var(--text); }
 .refresh-status { margin-top: .65rem; padding: .15rem 0; color: var(--blue-strong); background: transparent; border: 0; font-size: .8rem; font-weight: 850; }
 .refresh-status:hover { color: var(--text); }
+.countdown-actions { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-top: .65rem; }
+.countdown-actions .refresh-status { margin-top: 0; }
+.delegation-link, .catalog-back { width: max-content; padding: .15rem 0; color: var(--blue-strong); background: transparent; border: 0; font-size: .8rem; font-weight: 850; }
+.delegation-link { margin-top: 1.1rem; }.countdown-actions .delegation-link { margin-top: 0; }
+.delegation-link:hover, .catalog-back:hover { color: var(--text); }
+.catalog-view { padding-top: .45rem; }.catalog-view h1 { margin-bottom: .85rem; }.catalog-view h1 em { color: var(--blue-strong); font-style: normal; }
+.catalog-committee-list { display: grid; gap: .6rem; margin-top: 1.5rem; }
+.catalog-committee { min-height: 4.2rem; padding: .85rem 1rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; color: var(--text); background: var(--surface); border: 1px solid var(--line); border-radius: .9rem; text-align: left; }
+.catalog-committee:hover { border-color: var(--blue-strong); }.catalog-committee strong { font-size: 1rem; }.catalog-committee span { color: var(--muted); font-size: .78rem; font-weight: 700; }.catalog-committee b { margin-left: .55rem; color: var(--blue-strong); font-size: 1rem; }
+.catalog-summary { margin: -.2rem 0 1rem; color: var(--blue-strong); font-size: .86rem; font-weight: 800; }
+.catalog-country { cursor: default; }.catalog-country.available small { color: var(--success); }.catalog-country.unavailable small { color: var(--coral); }
 .corner-mark { position: fixed; right: 1rem; bottom: max(1rem, env(safe-area-inset-bottom)); opacity: .65; }
 .corner-mark img { width: 3rem; height: 3rem; object-fit: contain; filter: invert(1) grayscale(1) contrast(.8); }
 .dialog { width: min(calc(100% - 2rem), 28rem); padding: 2rem; color: var(--text); background: var(--surface-raised); border: 1px solid var(--line); border-radius: 1.25rem; }
