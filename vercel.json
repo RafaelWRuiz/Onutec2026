@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/comites", "destination": "/index.html" }
+  ]
+}
