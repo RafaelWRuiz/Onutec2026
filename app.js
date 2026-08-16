@@ -17,7 +17,7 @@ const committees = {
   PNUMA: ["África do Sul", "Alemanha", "Brasil", "Canadá", "China", "EUA", "Indonésia", "Índia", "Japão", "Maldivas", "Nigéria", "Noruega"]
 };
 const classOptions = {
-  "Manhã": { ADM: ["1º", "2º", "3º"], "D.S.": ["1º", "2º", "3º"] },
+  "Manhã": { ADM: ["1º", "2º", "3º"], "D.S.": ["1º", "2º", "3º"], Eletrônica: ["1º", "2º", "3º"], Mecânica: ["1º", "2º", "3º"], Nutrição: ["1º", "2º", "3º"] },
   "Tarde": { ADM: ["1º", "2º", "3º"], "S. Jurídicos": ["1º"], "Mecatrônica": ["1º", "2º", "3º"], Gastronomia: ["1º"] }
 };
 const flagCodes = { "Afeganistão":"af","África do Sul":"za","Alemanha":"de","Arábia Saudita":"sa","Argentina":"ar","Austrália":"au","Bangladesh":"bd","Brasil":"br","Canadá":"ca","Chile":"cl","China":"cn","Colômbia":"co","Coreia do Norte":"kp","Coreia do Sul":"kr","Costa Rica":"cr","Cuba":"cu","Dinamarca":"dk","EUA":"us","Egito":"eg","El Salvador":"sv","Emirados Árabes Unidos":"ae","Equador":"ec","Espanha":"es","Etiópia":"et","Filipinas":"ph","Finlândia":"fi","França":"fr","Haiti":"ht","Iémen":"ye","Indonésia":"id","Índia":"in","Irã":"ir","Iraque":"iq","Irlanda":"ie","Israel":"il","Itália":"it","Japão":"jp","Líbano":"lb","Luxemburgo":"lu","Maldivas":"mv","México":"mx","Nigéria":"ng","Noruega":"no","Países Baixos":"nl","Paquistão":"pk","Peru":"pe","Polônia":"pl","Quênia":"ke","Reino Unido":"gb","República Democrática do Congo":"cd","Rússia":"ru","Sudão":"sd","Suécia":"se","Suíça":"ch","Taiwan":"tw","Tailândia":"th","Tuvalu":"tv","Turquia":"tr","Ucrânia":"ua","Uganda":"ug","Venezuela":"ve","Vietnã":"vn" };
