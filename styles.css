@@ -107,7 +107,7 @@ h2 { margin-bottom: .7rem; font-size: 1.65rem; line-height: 1.08; letter-spacing
 .countdown-view::after { width: 20rem; height: 20rem; top: 4.5rem; right: -18rem; border-color: oklch(64% .12 244 / .16); }
 .countdown-view h1 { max-width: none; margin-bottom: .8rem; font-size: clamp(2.65rem, 9vw, 4rem); }
 .countdown-view h1 em { color: var(--blue-strong); font-style: normal; }
-.countdown-view .lead { max-width: 42ch; margin-bottom: 0; font-size: .93rem; line-height: 1.48; }
+.countdown-view .lead { max-width: 42ch; margin: .9rem 0 0; font-size: .93rem; line-height: 1.48; }
 .countdown-view .lead strong { color: var(--text); font-weight: 750; }
 .countdown { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .5rem; margin-top: clamp(1.35rem, 3vh, 2rem); }
 .countdown > div { min-height: 4.7rem; padding: .6rem .35rem; display: grid; align-content: center; gap: .1rem; background: oklch(18% .022 255 / .86); border: 1px solid var(--line); border-radius: .9rem; text-align: center; }
