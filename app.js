@@ -25,7 +25,7 @@ const supabaseClient = window.supabase.createClient(window.ONUTEC_SUPABASE_URL, 
 const storageKey = "onutec-visitor-token";
 const visitorToken = localStorage.getItem(storageKey) || crypto.randomUUID();
 localStorage.setItem(storageKey, visitorToken);
-const state = { mode: new URLSearchParams(window.location.search).get("consulta") === "1" ? "catalog" : "registration", step: 1, period: "", committee: "", country: "", slotId: "", personOne: "", yearOne: "", courseOne: "", classOne: "", personTwo: "", yearTwo: "", courseTwo: "", classTwo: "", loading: false, slots: [], catalogPeriod: "", catalogCommittee: "", catalogSlots: [], catalogLoading: false, registrationStatus: null };
+const state = { mode: new URLSearchParams(window.location.search).has("consulta") ? "catalog" : "registration", step: 1, period: "", committee: "", country: "", slotId: "", personOne: "", yearOne: "", courseOne: "", classOne: "", personTwo: "", yearTwo: "", courseTwo: "", classTwo: "", loading: false, slots: [], catalogPeriod: "", catalogCommittee: "", catalogSlots: [], catalogLoading: false, registrationStatus: null };
 const stage = document.querySelector("#stage");
 const progress = document.querySelector("#progress-bar");
 const stepLabel = document.querySelector("#step-label");
