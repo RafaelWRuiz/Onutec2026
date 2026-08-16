@@ -102,10 +102,9 @@ h2 { margin-bottom: .7rem; font-size: 1.65rem; line-height: 1.08; letter-spacing
 .success-mark { width: 3.4rem; height: 3.4rem; display: grid; place-items: center; margin-bottom: 1.25rem; color: var(--ink); background: var(--success); border-radius: 50%; font-size: 1.65rem; font-weight: 900; }
 .timer { color: var(--coral); font-variant-numeric: tabular-nums; }
 .countdown-view { position: relative; min-height: 0; padding-top: clamp(.35rem, 2vh, 1rem); isolation: isolate; }
-.countdown-view::before { content: ""; position: absolute; z-index: -1; width: 17rem; height: 17rem; top: 1rem; left: -10rem; border: 1px solid oklch(64% .12 244 / .26); border-radius: 50%; box-shadow: 0 0 0 2.7rem oklch(64% .12 244 / .025), 0 0 0 5.3rem oklch(64% .12 244 / .018); }
-.countdown-signal { width: 3.7rem; height: 3.7rem; display: grid; place-items: center; margin-bottom: 1.1rem; color: var(--blue-strong); border: 1px solid oklch(65% .13 244 / .55); border-radius: 50%; font-size: .52rem; font-weight: 900; line-height: 1.15; letter-spacing: .13em; text-align: center; }
-.countdown-signal i { position: absolute; width: 4.4rem; height: 4.4rem; border: 1px solid oklch(65% .13 244 / .22); border-radius: 50%; animation: orbit-spin 12s linear infinite; }
-.countdown-signal i::after { content: ""; position: absolute; top: .15rem; left: 50%; width: .35rem; height: .35rem; background: var(--blue-strong); border-radius: 50%; transform: translateX(-50%); box-shadow: 0 0 1.1rem oklch(70% .15 235 / .8); }
+.countdown-view::before, .countdown-view::after { content: ""; position: absolute; z-index: -1; border: 1px solid oklch(64% .12 244 / .24); border-radius: 50%; pointer-events: none; }
+.countdown-view::before { width: 31rem; height: 31rem; top: -17rem; left: -23rem; box-shadow: 0 0 0 2.8rem oklch(64% .12 244 / .026), 0 0 0 5.5rem oklch(64% .12 244 / .018); }
+.countdown-view::after { width: 20rem; height: 20rem; top: 4.5rem; right: -18rem; border-color: oklch(64% .12 244 / .16); }
 .countdown-view h1 { max-width: none; margin-bottom: .8rem; font-size: clamp(2.65rem, 9vw, 4rem); }
 .countdown-view h1 em { color: var(--blue-strong); font-style: normal; }
 .countdown-view .lead { max-width: 42ch; margin-bottom: 0; font-size: .93rem; line-height: 1.48; }
@@ -137,7 +136,6 @@ h2 { margin-bottom: .7rem; font-size: 1.65rem; line-height: 1.08; letter-spacing
 
 @media (max-width: 390px) { .countdown { grid-template-columns: repeat(2, 1fr); }.countdown > div { min-height: 4.8rem; } }
 
-@keyframes orbit-spin { to { transform: rotate(360deg); } }
 @keyframes signal-pulse { 0%, 100% { transform: scale(.8); opacity: .55; } 50% { transform: scale(1); opacity: 1; } }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; } }
