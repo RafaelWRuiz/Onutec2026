@@ -4,25 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#10131d" />
-    <meta name="description" content="Inscrições para a simulação ONU Tec." />
-    <title>ONU Tec | Inscrições 2026</title>
+    <meta name="description" content="Consulta pública do resultado da ONU Tec 2026." />
+    <title>ONU Tec | Consulta 2026</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <a class="skip-link" href="#app">Ir para a inscrição</a>
+    <a class="skip-link" href="#app">Ir para a consulta</a>
     <main id="app" class="app-shell">
       <header class="topbar">
         <a class="brand" href="#" aria-label="ONU Tec, início">
           <img src="assets/onu-tec.png" alt="Símbolo ONU Tec" />
-          <span>ONU TEC<small>INSCRIÇÕES 2026</small></span>
+          <span>ONU TEC<small>CONSULTA 2026</small></span>
         </a>
-        <button class="info-button" type="button" aria-label="Como funciona a inscrição" data-action="help">?</button>
+        <button class="info-button" type="button" aria-label="Sobre a consulta" data-action="help">?</button>
       </header>
-
-      <section class="status-line" aria-label="Andamento da inscrição" hidden>
-        <span id="step-label">Passo 1 de 4</span>
-        <div class="progress" aria-hidden="true"><i id="progress-bar"></i></div>
-      </section>
 
       <section class="stage" id="stage" aria-live="polite"></section>
     </main>
@@ -34,13 +29,11 @@
     <dialog id="help-dialog" class="dialog">
       <button class="dialog-close" type="button" aria-label="Fechar" data-action="close-help">×</button>
       <p class="eyebrow">COMO FUNCIONA</p>
-      <h2>Uma vaga por dupla.</h2>
-      <p>Escolha os dados da dupla, o comitê e o país. Ao confirmar, a inscrição fica registrada para a organização.</p>
+      <h2>Consulta encerrada.</h2>
+      <p>Este site exibe apenas o retrato final das delegações. Não é possível criar, editar ou alterar inscrições.</p>
       <button class="button primary" type="button" data-action="close-help">Entendi</button>
     </dialog>
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="supabase-config.js"></script>
-    <script src="app.js"></script>
+    <script src="consulta.js"></script>
   </body>
 </html>
