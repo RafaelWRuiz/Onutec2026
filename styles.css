@@ -131,6 +131,15 @@ h2 { margin-bottom: .7rem; font-size: 1.65rem; line-height: 1.08; letter-spacing
 .catalog-committee:hover { border-color: var(--blue-strong); }.catalog-committee strong { font-size: 1rem; }.catalog-committee span { color: var(--muted); font-size: .78rem; font-weight: 700; }.catalog-committee b { margin-left: .55rem; color: var(--blue-strong); font-size: 1rem; }
 .catalog-summary { margin: -.2rem 0 1rem; color: var(--blue-strong); font-size: .86rem; font-weight: 800; }
 .catalog-country { cursor: default; }.catalog-country.available small { color: var(--success); }.catalog-country.unavailable small { color: var(--coral); }
+.delegation { display: grid; gap: .8rem; padding: 1rem; color: var(--text); background: var(--surface); border: 1px solid var(--line); border-radius: .85rem; }
+.delegation-country { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-bottom: .7rem; border-bottom: 1px solid var(--line); }
+.delegation-country > span { display: inline-flex; align-items: center; gap: .72rem; font-weight: 800; }
+.delegation-members { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.delegation-members div, .delegation-room { display: grid; gap: .2rem; min-width: 0; }
+.delegation-members small, .delegation-room small { color: var(--muted); font-size: .68rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.delegation-members strong { overflow-wrap: anywhere; font-size: .84rem; line-height: 1.25; }
+.delegation-room { padding-top: .65rem; color: var(--blue-strong); border-top: 1px solid var(--line); }.delegation-room strong { font-size: .86rem; }
+.delegation.available { opacity: .7; }.delegation.available .delegation-members, .delegation.available .delegation-room { display: none; }
 .corner-mark { position: fixed; right: 1rem; bottom: max(1rem, env(safe-area-inset-bottom)); opacity: .65; }
 .corner-mark img { width: 3rem; height: 3rem; object-fit: contain; filter: invert(1) grayscale(1) contrast(.8); }
 .dialog { width: min(calc(100% - 2rem), 28rem); padding: 2rem; color: var(--text); background: var(--surface-raised); border: 1px solid var(--line); border-radius: 1.25rem; }
