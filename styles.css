@@ -146,7 +146,7 @@ h2 { margin-bottom: .7rem; font-size: 1.65rem; line-height: 1.08; letter-spacing
 .delegation-members { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
 .delegation-members div, .delegation-room { display: grid; gap: .2rem; min-width: 0; }
 .delegation-members small, .delegation-room small { color: var(--muted); font-size: .68rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
-.delegation-members strong { overflow-wrap: anywhere; font-size: .84rem; line-height: 1.25; }
+.delegation-members strong { overflow-wrap: anywhere; font-size: .84rem; line-height: 1.25; }.member-class { color: var(--blue-strong); font-size: .72rem; font-weight: 750; }
 .delegation-room { padding-top: .65rem; color: var(--blue-strong); border-top: 1px solid var(--line); }.delegation-room strong { font-size: .86rem; }
 .delegation.available { opacity: .7; }.delegation.available .delegation-members, .delegation.available .delegation-room { display: none; }
 .corner-mark { position: fixed; right: 1rem; bottom: max(1rem, env(safe-area-inset-bottom)); opacity: .65; }
